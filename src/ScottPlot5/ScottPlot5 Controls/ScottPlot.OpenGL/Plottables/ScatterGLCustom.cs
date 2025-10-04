@@ -81,7 +81,7 @@ public class ScatterGLCustom : ScatterGL
         {
             if (disposing)
             {
-                GL.Finish();
+                if (JoinsProgram != null) GL.Finish();
                 JoinsProgram?.Dispose();
                 JoinsProgram = null;
             }

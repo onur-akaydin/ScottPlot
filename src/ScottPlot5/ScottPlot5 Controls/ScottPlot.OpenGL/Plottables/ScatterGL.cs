@@ -178,7 +178,7 @@ public class ScatterGL : Scatter, IPlottableGL, IDisposable
         {
             if (disposing)
             {
-                GL.Finish();
+                if (LinesProgram != null || MarkerProgram != null) GL.Finish();
                 LinesProgram?.Dispose();
                 LinesProgram = null;
                 MarkerProgram?.Dispose();
